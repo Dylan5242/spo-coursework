@@ -386,6 +386,7 @@ function App() {
           bookings={bookings}
           movieById={movieById}
           cinemaById={cinemaById}
+          hallById={hallById}
           freeSeats={freeSeats}
           go={go}
           chooseSession={chooseSession}
@@ -457,7 +458,18 @@ function Header({ page, go, user, setUser }) {
   );
 }
 
-function HomePage({ movies, cinemas, sessions, bookings, movieById, cinemaById, freeSeats, go, chooseSession }) {
+function HomePage({
+  movies,
+  cinemas,
+  sessions,
+  bookings,
+  movieById,
+  cinemaById,
+  hallById,
+  freeSeats,
+  go,
+  chooseSession
+}) {
   const soldSeats = bookings.reduce((sum, booking) => sum + booking.seats.length, 0);
   const nearest = [...sessions].sort((a, b) => new Date(a.startsAt) - new Date(b.startsAt)).slice(0, 4);
 
