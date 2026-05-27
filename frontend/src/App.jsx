@@ -510,6 +510,7 @@ function HomePage({ movies, cinemas, sessions, bookings, movieById, cinemaById, 
             session={session}
             movie={movieById(session.movieId)}
             cinema={cinemaById(session.cinemaId)}
+            hall={hallById(session.cinemaId, session.hallId)}
             freeSeats={freeSeats(session)}
             onChoose={() => chooseSession(session.id)}
           />
